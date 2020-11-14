@@ -28,6 +28,9 @@ public class Course {
 		this.courseName = courseName;
 		this.startDate = startDate;
 		this.endDate = endDate;
+		
+		enrolledStudents = new ArrayList<Student>();
+		modules = new ArrayList<Module>();
 	}
 	
 	public void AddStudent(Student s)
@@ -40,9 +43,6 @@ public class Course {
 		modules.add(m);
 		m.AddAssociatedCourse(this);
 	}
-
-	
-	
 	
 	public String getCourseName() {
 		return courseName;

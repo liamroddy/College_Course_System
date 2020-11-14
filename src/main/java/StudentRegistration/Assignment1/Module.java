@@ -14,6 +14,9 @@ public class Module {
 	public Module(String moduleName) {
 		super();
 		this.moduleName = moduleName;
+		
+		studentList = new ArrayList<Student>();
+		associatedCourses = new ArrayList<Course>();
 	}
 	
 	public void AddStudent(Student s)
