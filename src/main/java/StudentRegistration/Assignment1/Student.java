@@ -2,8 +2,6 @@ package StudentRegistration.Assignment1;
 
 import java.util.ArrayList;
 
-//(Name, Age, DOB, ID, username, courses and modules registered for, etc.).
-
 public class Student {
 	private int id;
 	
@@ -11,67 +9,68 @@ public class Student {
 	private int age;
 	private String username;
 	
-	private ArrayList<Course> courses; // make arraylist?
+	private ArrayList<Course> courses;
 	private ArrayList<Module> modules;
 	
-	public Student(int id, String studentName, int age, String username, ArrayList<Course> courses, ArrayList<Module> modules) {
+	static int idCount = 0;
+	
+	public Student(String studentName, int age, String username) {
 		super();
 		
-		this.id = id;
+		this.id = idCount;
+		idCount++;
+		
 		this.studentName = studentName;
 		this.age = age;		
 		this.username = username;
 		
-		this.courses = courses;
-		this.modules = modules;
+		this.courses = new ArrayList<Course>();
+		this.modules = new ArrayList<Module>();
 	}
 
+	public void addCourse(Course c)
+	{
+		if (!courses.contains(c))
+		{
+			courses.add(c);
+		}
+		
+		// add any modules from course that we don't already have
+		for (int i=0; i < c.getModules().size(); i++)
+		{
+			Module m = c.getModules().get(i);
+			
+			if (!modules.contains(m))
+			{
+				modules.add(m);
+			}
+		}
+	}
+	
+	// getters
+	
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getStudentName() {
 		return studentName;
 	}
 
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
-	}
-
 	public int getAge() {
 		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
 	}
 
 	public String getUsername() {
 		return username;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public ArrayList<Course> getCourses() {
+		return courses;
 	}
 
-//	public Course[] getCourses() {
-//		return courses;
-//	}
-//
-//	public void setCourses(Course[] courses) {
-//		this.courses = courses;
-//	}
-//
-//	public Module[] getModules() {
-//		return modules;
-//	}
-//
-//	public void setModules(Module[] modules) {
-//		this.modules = modules;
-//	}
+	public ArrayList<Module> getModules() {
+		return modules;
+	}
 	
 }
