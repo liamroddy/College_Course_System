@@ -99,7 +99,8 @@ public class AppTest
 		assertEquals(s3.getModules().get(1), metricSpaces);	
 		assertEquals(s3.getModules().get(2), softwareEngineering);	
 		
-		// finally, ensure modules have correct number of associated courses (SE only for comp. sci., other two for maths as well)
+		// finally, ensure modules have correct number of associated courses
+		// (Software Eng only for CS, other two module for Maths as well)
 		assertEquals(metricSpaces.getAssociatedCourses().size(), 2);
 		assertEquals(machineLearning.getAssociatedCourses().size(), 2);
 		assertEquals(softwareEngineering.getAssociatedCourses().size(), 1);

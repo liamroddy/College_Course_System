@@ -4,11 +4,9 @@ import java.util.ArrayList;
 
 import org.joda.time.DateTime;
 
-
-
 public class Course {
 	private String courseName;	
-	private DateTime startDate; // = new DateTime();
+	private DateTime startDate;
 	private DateTime endDate;
 	
 	private ArrayList<Student> enrolledStudents;
@@ -39,9 +37,15 @@ public class Course {
 			modules.add(m);
 			m.AddAssociatedCourse(this);
 		}
-	
-	// getters
+	}	
+
+	@Override
+	public String toString()
+	{
+		return courseName;
 	}
+	
+	// Getters:
 	
 	public String getCourseName() {
 		return courseName;

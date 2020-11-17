@@ -32,7 +32,13 @@ public class Module {
 		}
 	}
 	
-	// gettera
+	@Override
+	public String toString()
+	{
+		return moduleName;
+	}
+	
+	// Getters:
 	
 	public ArrayList<Course> getAssociatedCourses() {
 		return associatedCourses;
@@ -40,7 +46,5 @@ public class Module {
 
 	public String getModuleName() {
 		return moduleName;
-	}
-	
-	
+	}	
 }

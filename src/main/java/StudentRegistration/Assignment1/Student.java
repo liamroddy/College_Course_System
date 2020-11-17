@@ -47,7 +47,16 @@ public class Student {
 		}
 	}
 	
-	// getters
+	@Override
+	public String toString()
+	{
+		String string = String.format("Name: %s\nAge: %s\nID: %s\nUsername: %s\nCourses: %s\nModules: %s\n",
+				studentName, age, id, username, courses, modules);  
+		
+		return string;
+	}
+	
+	// Getters:
 	
 	public int getId() {
 		return id;
@@ -72,5 +81,4 @@ public class Student {
 	public ArrayList<Module> getModules() {
 		return modules;
 	}
-	
 }
